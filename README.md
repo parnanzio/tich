@@ -18,7 +18,7 @@ But it's a solution (for now) until Appcelerator solve this in some way.
 
 As global CLI:
 
-    $ npm install -g tich
+    $ npm install @parnanzio/tich
 
 ## Usage
 
@@ -70,7 +70,7 @@ Create a tich.cfg file in the Titanium project folder as follows:
 ```
 You can currently put any top level XML node in the settings object, so *publisher*, *copyright*, *icon* etc
 
-##Dynamic Substitution
+## Dynamic Substitution
 
 This allows you to use dynamic content in your replacement values. Special dynamic values include:
 
@@ -80,19 +80,19 @@ This allows you to use dynamic content in your replacement values. Special dynam
 * `$TIME_EPOCH$` - The number of seconds since the unix epoch. Useful for increasing build numbers.
 * `$tiapp.property$` - Substitutes the current value of the tiapp.xml property's value. For example, `$tiapp.version$` would substitute the current value of the `<version>` element from tiapp.xml
 
-##Raw xpath Substitutions
+## Raw xpath Substitutions
 
 This allows you to set arbitrary XML values and attributes using [xpath](http://en.wikipedia.org/wiki/XPath) expressions.
 This is useful for setting values in the `<android>` and `<ios>` sections of `tiapp.xml`. See the examples above for how
 to do this.
 
-##Default
+## Default
 
 This will show the current TiApp.xml config for name, id, version:
 
     $ tich
 
-##Switch configuration automatically (Alloy)
+## Switch configuration automatically (Alloy)
 
 If you're using Alloy, and have set a global theme, and this theme is a config, TiCh will automatilly look for that. So set your theme in app/config.json, then type:
 
@@ -100,7 +100,7 @@ If you're using Alloy, and have set a global theme, and this theme is a config, 
 
 and if TiCh finds a theme, and matches it in your TiCh config settings, it'll select it.
 
-##Switch configuration manually
+## Switch configuration manually
 
 This will switch the current TiApp.xml file to the settings for the config name specified:
 
@@ -113,7 +113,7 @@ You'll need to do a
 
 too before building with Titanium as any App Name changes will create multiple projects.
 
-##Optionally using multiple config files
+## Optionally using multiple config files
 
 You can optionally use the `--cfgfile`, `--in` and `--out` options to specify the files to use. This is useful when you want to distribute a generic version of `tich.cfg` or `tiapp.xml` with your open source project but use private versions for your own internal builds.
 
@@ -131,11 +131,11 @@ If you do not specify these options, the following defaults will apply:
 * `--in` and `--out` default to `./tiapp.xml`
 
 
-##DefaultIcon.png Consideration
+## DefaultIcon.png Consideration
 When creating different themes for your app you may also supply different Icons, however Alloy does not currently allow the DefaultIcon to be themeable [JIRA](https://jira.appcelerator.org/browse/ALOY-1318).  This library will automatically search the following paths: `/themes/[theme]/` and `/themes/[theme]/assets/iphone` for `DefaultIcon.png` and copy that file to the project's root upon selecting the config.
 
 
-##Future thoughts
+## Future thoughts
 
 * allow saving of new config items / settings via the CLI
 * allow renaming, deleting of configs
@@ -147,6 +147,7 @@ When creating different themes for your app you may also supply different Icons,
 
 * [Tony Luka Savage](http://github.com/tonylukasavage) for creating the Tiapp.xml module
 * [Fokke Zandbergen](http://github.com/fokkeZB) for the CLI template
+* [Jason Kneen](http://github.com/jasonkneen) for the original repo
 
 ## License
 
